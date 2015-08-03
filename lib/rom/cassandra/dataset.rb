@@ -35,7 +35,7 @@ module ROM
           "DELETE * FROM #{@table} WHERE " + object.map { |k, _| "#{k} = ?" }.join(' AND ')
         )
 
-        session.execute(statement, arguments: object.arguments)
+        session.execute(statement, arguments: object.values)
       end
     end
   end
